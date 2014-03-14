@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>	
+	<script src="js/main.js"></script>
+	<title>Thumbnail Builder</title>
+</head>
+<body>
+	<div id="presenter" class="centered">
+		<h1>Vignette</h1>
+		<div class="form-group">
+			<label>Creative Location</label>
+			<div class="input-group">
+				<input type="text" class="form-control full-width-input" id="creative_path" value="http://cdn.visiblemeasures.com/ad_assets/s/c543/Inception.mp4" placeholder="path to CDN hosted or Youtube hosted creative"></input>
+				<span class="input-group-btn"><button id="load_video" class="btn btn-default" type="button">Load</button></span>
+			</div>
+		</div>	
+
+		<video id="video-player" class="video-preview" autoplay></video>
+		<canvas id="thumb-preview" class="video-preview"></canvas>
+
+		<div id="video-controls" class="video-preview-controls btn-group">
+			<div id="timeline"><div id="play_head"></div></div>
+			<button type="button" id="frame_backwards" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span></button>
+			<button type="button" id="play_pause" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
+			<button type="button" id="frame_forwards" class="btn btn-default"><span class="glyphicon glyphicon-forward"></span></button>
+			<button type="button" id="choose_thumbnail" class="btn btn-default">Select Thumbnail</button>
+		</div>
+		<div id="thumbnail-controls" class="video-preview-controls btn-group">
+			<button type="button" id="save_image" class="btn btn-default">Save Thumbnail</button>			
+		</div>
+		<div id="options">	
+			<div class="form-group">	
+				<label class="inline-forms">Width</label>		
+				<input type="number" class="form-control inline-forms" id="output_width" value=420></input>
+				<label class="inline-forms">Height</label>
+				<input type="number" class="form-control inline-forms" id="output_height" value=300></input>			
+				<label class="inline-forms">Scaling</label>
+				<input type="radio" name="preserve_aspect" value="preserve" checked>Preserve Aspect</input>
+				<input type="radio" name="preserve_aspect" value="letterbox">Stretch</input>
+				<!-- <input type="radio" name="preserve_aspect" value="stretch">Stretch</input> -->
+			</div>
+		</div>
+		<div id="operation_notifier"></div>
+	</div>
+</body>
+</html>
